@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
+    "antd": "^3.26.3",
     "formik": "^2.0.6",
-    "grommet": "^2.8.1",
     "next": "9.1.4",
     "node-sass": "^4.13.0",
     "react": "16.12.0",

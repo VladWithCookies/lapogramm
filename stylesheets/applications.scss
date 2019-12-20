@@ -1,7 +1,30 @@
 @import 'base/modules';
-@import 'grommet/modules';
+@import 'antd/modules';
 @import 'base/typography';
 @import 'components/modules';
 @import 'layout/modules';
 @import 'modules/modules';
 @import 'utils/helpers';
+
+.editor {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.editor__uploader {
+  flex: 1;
+  padding: 20px;
+}
+
+.editor__slider {
+  padding: 20px 0 30px 0;
+}
+
+.editor__tools {
+  text-align: center;
+
+  .ant-tabs-tabpane {
+    padding: 0 20px;
+  }
+}
