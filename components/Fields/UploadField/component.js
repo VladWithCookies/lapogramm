@@ -1,15 +1,21 @@
 import React from 'react'
+
 import { Upload, Icon } from 'antd'
 
-const UploadField = ({ className }) => (
-  <Upload.Dragger className={className}>
-    <p>
-      <Icon type='inbox' />
+const UploadField = ({ name, onChange, className, hidden }) => !hidden && (
+  <Upload
+    name={name}
+    onChange={onChange}
+    className={className}
+    showUploadList={false}
+    listType='picture-card'
+    supportServerRender
+  >
+    <Icon type='plus' />
+    <p className='ant-upload-text'>
+      Upload
     </p>
-    <p>
-      Click or drag file here to upload
-    </p>
-  </Upload.Dragger>
+  </Upload>
 )
 
 export default UploadField
