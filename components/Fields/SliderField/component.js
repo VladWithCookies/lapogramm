@@ -9,6 +9,7 @@ const SliderField = ({
   value,
   onChange,
   className,
+  tooltipVisible,
 }) => (
   <Slider
     min={min}
@@ -18,6 +19,7 @@ const SliderField = ({
     value={value}
     onChange={onChange}
     className={className}
+    tooltipVisible={tooltipVisible}
   />
 )
 

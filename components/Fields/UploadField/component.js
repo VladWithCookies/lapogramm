@@ -11,8 +11,8 @@ const UploadField = ({ name, onChange, className, hidden }) => !hidden && (
     listType='picture-card'
     supportServerRender
   >
-    <Icon type='plus' />
-    <p className='ant-upload-text'>
+    <Icon type='plus' className='uploader-icon' />
+    <p className='uploader-text'>
       Upload
     </p>
   </Upload>

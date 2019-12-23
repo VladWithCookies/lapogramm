@@ -9,6 +9,7 @@ function SliderField({
   form,
   field,
   className,
+  tooltipVisible,
 }) {
   const handleChange = (value) => {
     const { setFieldValue } = form
@@ -25,6 +26,7 @@ function SliderField({
       value={field.value}
       className={className}
       onChange={handleChange}
+      tooltipVisible={tooltipVisible}
     />
   )
 }
