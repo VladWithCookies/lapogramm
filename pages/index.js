@@ -1,20 +1,24 @@
 import React from 'react'
-import Head from 'next/head'
 import 'antd/dist/antd.css'
 
-import Editor from '../components/Editor'
+import { getPosts } from '../api'
+import { dataFormatter } from '../utils'
+import Layout from '../components/Layout'
+import PostList from '../components/PostList'
 import '../stylesheets/applications.scss'
 
-const Home = () => (
-  <>
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <main className="main-container">
-      <Editor />
-    </main>
-  </>
+const HomePage = ({ posts }) => (
+  <Layout title='Home'>
+    <PostList posts={posts} />
+  </Layout>
 )
 
-export default Home
+HomePage.getInitialProps = async () => {
+  const response = await getPosts()
+  const data = await response.json()
+  const posts = dataFormatter.deserialize(data)
+
+  return { posts }
+}
+
+export default HomePage
