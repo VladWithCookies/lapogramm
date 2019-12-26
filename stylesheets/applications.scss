@@ -5,3 +5,18 @@
 @import 'layout/modules';
 @import 'modules/modules';
 @import 'utils/helpers';
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+.bordered {
+  border: 1px solid #e8e8e8;
+}
+
+@media screen and (max-width: 768px) {
+  .bordered {
+    border: 0;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+  }
+}

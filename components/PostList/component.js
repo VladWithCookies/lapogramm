@@ -9,7 +9,13 @@ const PostList = ({ posts }) => (
       sm={24}
       md={{ span: 10, offset: 7 }}
     >
-      {posts.map((post) => <Post key={post.id} {...post} />)}
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          {...post}
+          className='bordered mb-20'
+        />
+      ))}
     </Col>
   </Row>
 )
