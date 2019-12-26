@@ -1,9 +1,12 @@
 import { withFormik } from 'formik'
 
+import { createPost } from '../../api'
 import Editor from './component'
 
-const handleSubmit = (values) => {
-  console.log(values) // TODO
+const handleSubmit = (values, { setSubmitting }) => {
+  // createPost(values)
+
+  setSubmitting(false)
 }
 
 const mapPropsToValues = () => ({
