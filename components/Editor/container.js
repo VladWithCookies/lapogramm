@@ -3,16 +3,21 @@ import { withFormik } from 'formik'
 import { createPost } from '../../api'
 import Editor from './component'
 
-const handleSubmit = (values, { setSubmitting }) => {
-  // createPost(values)
+const handleSubmit = async (values, { setSubmitting }) => {
+  const formData = new FormData()
 
+  formData.append('image', values.result)
+
+  createPost(formData)
   setSubmitting(false)
 }
 
 const mapPropsToValues = () => ({
-  brightness: 1,
-  contrast: 1,
-  saturate: 1,
+  filters: {
+    brightness: 1,
+    contrast: 1,
+    saturate: 1,
+  }
 })
 
 export default withFormik({ handleSubmit, mapPropsToValues })(Editor)

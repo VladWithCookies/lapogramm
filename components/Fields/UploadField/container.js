@@ -1,35 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import UploadFieldComponent from './component'
 
-function UploadField({ field, form, className, hidden }) {
-  const [loading, setLoading] = useState(false)
-
-  const handleChange = ({ file }) => {
+function UploadField({ field, form, className }) {
+  const handleChange = (event) => {
     const { setFieldValue } = form
+    const { name } = field
 
-    if (file.status === 'uploading') {
-      setLoading(true)
-      return
-    }
-
-    if (file.status === 'done') {
-      const reader = new FileReader()
-
-      reader.addEventListener('load', () => {
-        setFieldValue(field.name, reader.result)
-        setLoading(false)
-      })
-
-      reader.readAsDataURL(file.originFileObj)
-    }
+    setFieldValue(name, event.currentTarget.files[0])
   }
 
   return (
     <UploadFieldComponent
-      hidden={hidden}
       name={field.name}
-      loading={loading}
       className={className}
       onChange={handleChange}
     />

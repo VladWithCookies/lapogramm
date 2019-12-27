@@ -4,29 +4,10 @@
   flex-direction: column;
 }
 .editor__uploader {
-  flex: 1;
   display: flex;
+  align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
-
-  .ant-upload-picture-card-wrapper {
-    flex: 1;
-    display: flex;
-    flex-grow: stretch;
-
-    .ant-upload {
-      flex: 1;
-      height: 100%;
-    }
-  }
-
-  .ant-upload.ant-upload-select-picture-card {
-    margin: 0;
-  }
-}
-.editor__uploader-field {
-  padding: 20px;
 }
 .editor__slider {
   padding: 20px 0 30px 0;
@@ -42,6 +23,13 @@
   display: flex;
   padding: 20px;
   justify-content: space-between;
+}
+.editor__preview {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 .editor__image {
   object-fit: contain;

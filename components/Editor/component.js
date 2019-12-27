@@ -2,7 +2,7 @@ import React from 'react'
 import { Field } from 'formik'
 import { Row, Col, Button, Icon } from 'antd'
 
-import Image from './Image'
+import Preview from './Preview'
 import Filters from './Filters'
 import UploadField from '../Fields/UploadField'
 
@@ -12,36 +12,43 @@ const Editor = ({ handleSubmit, values, resetForm }) => (
       sm={24}
       md={{ span: 16, offset: 4 }}
     >
-      <form onSubmit={handleSubmit} className='editor'>
-        {values.imageSrc && (
-          <div className='editor__buttons'>
-            <Button
-              size='large'
-              onClick={resetForm}
-            >
-              <Icon type='close' />
-              Cancel
-            </Button>
-            <Button
-              size='large'
-              type='primary'
-              htmlType='submit'
-            >
-              <Icon type='check' />
-              Save
-            </Button>
-          </div>
-        )}
-        <div className='editor__uploader'>
-          {values.imageSrc && <Image {...values} />}
+      <form
+        onSubmit={handleSubmit}
+        className='bordered editor'
+      >
+        {values.image ? (
+          <>
+            <div className='editor__buttons'>
+              <Button
+                size='large'
+                onClick={resetForm}
+              >
+                <Icon type='close' />
+                Cancel
+              </Button>
+              <Button
+                size='large'
+                type='primary'
+                htmlType='submit'
+              >
+                <Icon type='check' />
+                Save
+              </Button>
+            </div>
+            <Field
+              name='result'
+              component={Preview}
+              className='editor__uploader'
+            />
+            <Filters />
+          </>
+        ) : (
           <Field
-            name='imageSrc'
+            name='image'
             component={UploadField}
-            hidden={!!values.imageSrc}
-            className='editor__uploader-field'
+            className='editor__uploader'
           />
-        </div>
-        {values.imageSrc && <Filters />}
+        )}
       </form>
     </Col>
   </Row>

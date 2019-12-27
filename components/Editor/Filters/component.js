@@ -16,7 +16,7 @@ const Filters = () => (
         min={0}
         max={2}
         step={0.01}
-        name='brightness'
+        name='filters.brightness'
         tooltipVisible={false}
         component={SliderField}
         className='editor__slider'
@@ -27,7 +27,7 @@ const Filters = () => (
         min={0}
         max={2}
         step={0.01}
-        name='contrast'
+        name='filters.contrast'
         tooltipVisible={false}
         component={SliderField}
         className='editor__slider'
@@ -38,7 +38,7 @@ const Filters = () => (
         min={0}
         max={2}
         step={0.01}
-        name='saturate'
+        name='filters.saturate'
         tooltipVisible={false}
         component={SliderField}
         className='editor__slider'
@@ -49,7 +49,7 @@ const Filters = () => (
         min={0}
         max={360}
         step={1}
-        name='hue-rotate'
+        name='filters.hue'
         tooltipVisible={false}
         component={SliderField}
         className='editor__slider'
@@ -60,7 +60,7 @@ const Filters = () => (
         min={0}
         max={1}
         step={0.01}
-        name='grayscale'
+        name='filters.grayscale'
         tooltipVisible={false}
         component={SliderField}
         className='editor__slider'
@@ -71,7 +71,7 @@ const Filters = () => (
         min={0}
         max={1}
         step={0.01}
-        name='sepia'
+        name='filters.sepia'
         tooltipVisible={false}
         component={SliderField}
         className='editor__slider'
