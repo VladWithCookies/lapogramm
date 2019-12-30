@@ -3,7 +3,15 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { Card, Avatar, Icon, Statistic } from 'antd'
 
-const Post = ({ id, description, className, hoverable = true }) => (
+import { API_URL } from '../../constants'
+
+const Post = ({
+  id,
+  filename,
+  className,
+  description,
+  hoverable = true
+}) => (
   <Link
     href='/posts/[id]'
     as={`/posts/${id}`}
@@ -18,7 +26,7 @@ const Post = ({ id, description, className, hoverable = true }) => (
         description='a few seconds ago'
       />
       <img
-        src='https://picsum.photos/500'
+        src={`${API_URL}/${filename}`}
         className='post__image'
       />
       <Card.Meta

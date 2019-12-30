@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import { withFormik } from 'formik'
 
 import { createPost } from '../../api'
@@ -7,8 +8,8 @@ const handleSubmit = async (values, { setSubmitting }) => {
   const formData = new FormData()
 
   formData.append('image', values.result)
-
   createPost(formData)
+  Router.push('/')
   setSubmitting(false)
 }
 
