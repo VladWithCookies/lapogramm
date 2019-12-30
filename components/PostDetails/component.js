@@ -5,7 +5,7 @@ import Post from '../Post'
 import CommentList from '../CommentList'
 import CommentForm from '../CommentForm'
 
-const PostDetails = ({ filename, description }) => (
+const PostDetails = ({ filename, createdAt, description }) => (
   <Row>
     <Col
       className='bordered post'
@@ -15,6 +15,7 @@ const PostDetails = ({ filename, description }) => (
       <Post
         hoverable={false}
         filename={filename}
+        createdAt={createdAt}
         description={description}
       />
       <CommentForm />
