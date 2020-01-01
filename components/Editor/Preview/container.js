@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { toCSSFilter } from '../../../utils'
 import ImagePreviewComponent from './component'
@@ -16,30 +16,35 @@ const ImagePreview = ({
   },
 }) => {
   const ref = useRef(null)
+  const [imageSrc, setImageSrc] = useState(null)
 
   useEffect(() => {
-    const context = ref.current.getContext('2d')
     const reader = new FileReader()
 
     reader.onload = (event) => {
-      const preview = new Image()
-
-      preview.onload = () => {
-        ref.current.width = preview.width
-        ref.current.height = preview.height
-        context.filter = toCSSFilter(filters)
-        context.drawImage(preview, 0, 0)
-
-        ref.current.toBlob((blob) => {
-          setFieldValue(name, blob)
-        })
-      }
-
-      preview.src = event.target.result
+      setImageSrc(event.target.result)
     }
 
     reader.readAsDataURL(image)
-  }, [filters])
+  }, [image])
+
+  useEffect(() => {
+    const context = ref.current.getContext('2d')
+    const preview = new Image()
+
+    preview.onload = () => {
+      ref.current.width = preview.width
+      ref.current.height = preview.height
+      context.filter = toCSSFilter(filters)
+      context.drawImage(preview, 0, 0)
+
+      ref.current.toBlob((blob) => {
+        setFieldValue(name, blob)
+      })
+    }
+
+    preview.src = imageSrc
+  }, [filters, imageSrc])
 
   return (
     <ImagePreviewComponent ref={ref} />
