@@ -3,17 +3,10 @@ import { List } from 'antd'
 
 import Comment from '../Comment'
 
-const Comments = () => (
+const Comments = ({ comments }) => (
   <List
-    dataSource={[
-      {
-        author: 'Han Solo',
-        avatar: 'https://picsum.photos/50',
-        content: 'Hello',
-        datetime: 'a few seconds ago',
-      },
-    ]}
     renderItem={Comment}
+    dataSource={comments}
     itemLayout='horizontal'
     className='comment-list'
   />
