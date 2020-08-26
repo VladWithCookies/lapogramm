@@ -5,7 +5,13 @@ import Post from '../Post'
 import CommentList from '../CommentList'
 import CommentForm from '../CommentForm'
 
-const PostDetails = ({ filename, createdAt, description }) => (
+const PostDetails = ({
+  post: {
+    filename,
+    createdAt,
+    description,
+  },
+}) => (
   <Row>
     <Col
       className='bordered post'

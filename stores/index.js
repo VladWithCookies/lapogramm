@@ -1,0 +1,1 @@
+export { getPostDetailsStore } from './PostDetails';

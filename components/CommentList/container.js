@@ -1,28 +1,16 @@
-import CommentsStore from '../../stores/comments';
-import CommentListComponent from './component';
+import { Comment } from 'antd';
+import { observer, inject } from 'mobx-react'
 
-const CommentList = (props) => {
-  const { comments } = new CommentsStore([
-    {
-      author: 'Han Solo',
-      avatar: 'https://picsum.photos/50',
-      content: 'Hello',
-      datetime: 'a few seconds ago',
-    },
-    {
-      author: 'Obi Wan',
-      avatar: 'https://picsum.photos/60',
-      content: 'Hello, there!',
-      datetime: 'a few seconds ago',
-    },
-  ]);
-
-  return (
-    <CommentListComponent
-      {...props}
-      comments={comments}
-    />
-  );
-};
+@inject('postDetailsStore')
+@observer
+class CommentList extends React.Component {
+  render() {
+    return (
+      <div className="comment-list">
+        {this.props.postDetailsStore.comments.map((comment, index) => <Comment key={index} {...comment} />)}
+      </div>
+    )
+  }
+}
 
 export default CommentList;

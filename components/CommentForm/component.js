@@ -1,19 +1,17 @@
 import React from 'react'
 import { Form, Button, Input } from 'antd'
 
-const CommentForm = () => (
+const CommentForm = ({ onSubmit }) => (
   <div className='comment-form'>
     <Form.Item>
-      <Input.TextArea
-        autoSize={{ minRows: 1 }}
-      />
+      <Input.TextArea autoSize={{ minRows: 1 }} />
     </Form.Item>
     <Form.Item>
       <Button
         block
         size='large'
         type='primary'
-        htmlType='submit'
+        onClick={onSubmit}
       >
         Leave a comment
       </Button>

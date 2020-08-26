@@ -2,7 +2,7 @@ import React from 'react'
 
 import SliderFieldComponent from './component'
 
-function SliderField({
+const SliderField = ({
   min,
   max,
   step,
@@ -10,7 +10,7 @@ function SliderField({
   field,
   className,
   tooltipVisible,
-}) {
+}) => {
   const handleChange = (value) => {
     const { setFieldValue } = form
 

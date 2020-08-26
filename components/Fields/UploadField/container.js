@@ -2,7 +2,7 @@ import React from 'react'
 
 import UploadFieldComponent from './component'
 
-function UploadField({ field, form, className }) {
+const UploadField = ({ field, form, className }) => {
   const handleChange = (event) => {
     const { setFieldValue } = form
     const { name } = field
