@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react';
-import { TweenOneGroup } from 'rc-tween-one';
 
+import TweenOne from '../../lib/tweenOne';
 import Comment from '../Comment';
 
 const CommentList = observer(({ comments, onDeleteComment }) => {
@@ -39,7 +39,7 @@ const CommentList = observer(({ comments, onDeleteComment }) => {
   ];
 
   return (
-    <TweenOneGroup
+    <TweenOne.TweenOneGroup
       exclusive
       enter={enter}
       leave={leave}
@@ -52,7 +52,7 @@ const CommentList = observer(({ comments, onDeleteComment }) => {
           onDelete={onDeleteComment}
         />
       ))}
-    </TweenOneGroup>
+    </TweenOne.TweenOneGroup>
   );
 });
 

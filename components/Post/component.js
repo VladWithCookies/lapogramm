@@ -1,5 +1,4 @@
 import React from 'react'
-import clsx from 'clsx'
 import { formatDistanceToNow } from 'date-fns'
 import { Card, Avatar, Icon, Statistic } from 'antd'
 
@@ -7,15 +6,10 @@ import { API_URL } from '../../constants'
 
 const Post = ({
   filename,
-  className,
   createdAt,
   description,
-  hoverable = true
 }) => (
-  <Card
-    className={clsx('post', className)}
-    hoverable={hoverable}
-  >
+  <Card className="post bordered mb-20">
     <Card.Meta
       title='Vlad V'
       description={`${formatDistanceToNow(new Date(createdAt))} ago`}

@@ -2,7 +2,7 @@ import { uniqueId } from 'lodash';
 import { observable, action } from 'mobx'
 import { BaseStore, getOrCreateStore } from 'next-mobx-wrapper';
 
-import dataFormatter from '../utils/dataFormatter'
+import dataFormatter from '../lib/dataFormatter'
 import { getPost } from '../api/post'
 
 class PostDetails extends BaseStore {

@@ -4,7 +4,7 @@ import { Form, Button, Input } from 'antd'
 const CommentForm = ({ onAddComment }) => (
   <div className='comment-form'>
     <Form.Item>
-      <Input.TextArea autoSize={{ minRows: 1 }} />
+      <Input.TextArea autoSize={{ minRows: 2 }} />
     </Form.Item>
     <Form.Item>
       <Button

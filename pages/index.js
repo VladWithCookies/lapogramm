@@ -1,5 +1,5 @@
 import { getPosts } from '../api'
-import { dataFormatter } from '../utils'
+import dataFormatter from '../lib/dataFormatter'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 

@@ -18,10 +18,7 @@ const PostList = ({ posts }) => (
           as={`/posts/${post.id}`}
         >
           <a>
-            <Post
-              {...post}
-              className='bordered mb-20'
-            />
+            <Post {...post} />
           </a>
         </Link>
       ))}
