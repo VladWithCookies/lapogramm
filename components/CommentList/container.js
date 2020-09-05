@@ -1,16 +1,16 @@
-import { Comment } from 'antd';
-import { observer, inject } from 'mobx-react'
+import { MobXProviderContext } from 'mobx-react';
 
-@inject('postDetailsStore')
-@observer
-class CommentList extends React.Component {
-  render() {
-    return (
-      <div className="comment-list">
-        {this.props.postDetailsStore.comments.map((comment, index) => <Comment key={index} {...comment} />)}
-      </div>
-    )
-  }
-}
+import CommentListComponent from './component';
+
+const CommentList = () => {
+  const { postDetailsStore: { comments, removeComment } } = React.useContext(MobXProviderContext);
+
+  return (
+    <CommentListComponent
+      comments={comments}
+      onDeleteComment={removeComment}
+    />
+  );
+};
 
 export default CommentList;

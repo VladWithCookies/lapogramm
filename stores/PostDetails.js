@@ -1,3 +1,4 @@
+import { uniqueId } from 'lodash';
 import { observable, action } from 'mobx'
 import { BaseStore, getOrCreateStore } from 'next-mobx-wrapper';
 
@@ -22,12 +23,19 @@ class PostDetails extends BaseStore {
   }
 
   @action addComment = () => {
+    const id = uniqueId();
+
     this.comments.push({
-      content: 'Test',
+      id: id,
+      content: id,
       author: 'Han Solo',
       datetime: 'a few seconds ago',
       avatar: 'https://picsum.photos/50',
     })
+  }
+
+  @action removeComment = (comment) => {
+    this.comments.remove(comment);
   }
 }
 

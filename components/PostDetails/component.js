@@ -14,7 +14,7 @@ const PostDetails = ({
 }) => (
   <Row>
     <Col
-      className='bordered post'
+      className='bordered'
       sm={24}
       md={{ span: 10, offset: 7 }}
     >

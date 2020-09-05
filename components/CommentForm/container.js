@@ -1,14 +1,17 @@
-import { inject } from 'mobx-react'
+import { defer } from 'lodash';
+import { MobXProviderContext } from 'mobx-react';
 
 import CommentFormComponent from './component'
 
-@inject('postDetailsStore')
-class CommentForm extends React.Component {
-  render() {
-    return (
-      <CommentFormComponent onSubmit={this.props.postDetailsStore.addComment} />
-    );
+const CommentForm = () => {
+  const { postDetailsStore: { addComment } } = React.useContext(MobXProviderContext);
+
+  const handleAddComment = () => {
+    addComment();
+    defer(window.scrollTo, 0, document.body.scrollHeight);
   }
+
+  return <CommentFormComponent onAddComment={handleAddComment} />
 }
 
 export default CommentForm;
