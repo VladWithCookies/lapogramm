@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns'
 import { Card, Avatar, Icon, Statistic } from 'antd'
+import { MessageOutlined, HeartOutlined } from '@ant-design/icons';
 
 import { API_URL } from 'constants/api'
 
@@ -26,12 +27,12 @@ const Post = ({
       <Statistic
         value={42}
         className='stats-item'
-        prefix={<Icon type='heart' />}
+        prefix={<HeartOutlined />}
       />
       <Statistic
         value={42}
         className='stats-item'
-        prefix={<Icon type='message' />}
+        prefix={<MessageOutlined />}
       />
     </div>
   </Card>

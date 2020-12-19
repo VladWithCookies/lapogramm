@@ -1,6 +1,6 @@
 .editor {
   display: flex;
-  height: calc(100vh - 84px);
+  height: calc(100vh - 100px);
   flex-direction: column;
 }
 .editor__uploader {
@@ -11,13 +11,6 @@
 }
 .editor__slider {
   padding: 20px 0 30px 0;
-}
-.editor__tools {
-  text-align: center;
-
-  .ant-tabs-tabpane {
-    padding: 0 20px;
-  }
 }
 .editor__buttons {
   display: flex;

@@ -1,5 +1,6 @@
 import { Field } from 'formik'
-import { Row, Col, Button, Icon } from 'antd'
+import { Row, Col, Button } from 'antd'
+import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 
 import UploadField from 'components/fields/UploadField'
 import Preview from './Preview'
@@ -13,7 +14,7 @@ const Editor = ({ handleSubmit, values, resetForm }) => (
     >
       <form
         onSubmit={handleSubmit}
-        className='bordered editor mb-20'
+        className='bordered editor'
       >
         {values.image ? (
           <>
@@ -22,7 +23,7 @@ const Editor = ({ handleSubmit, values, resetForm }) => (
                 size='large'
                 onClick={resetForm}
               >
-                <Icon type='close' />
+                <CloseOutlined />
                 Cancel
               </Button>
               <Button
@@ -30,7 +31,7 @@ const Editor = ({ handleSubmit, values, resetForm }) => (
                 type='primary'
                 htmlType='submit'
               >
-                <Icon type='check' />
+                <CheckOutlined />
                 Save
               </Button>
             </div>

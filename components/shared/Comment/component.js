@@ -1,9 +1,8 @@
 import { Button, Comment as AntdComment } from 'antd';
 
-const Comment = React.forwardRef(({ comment, onDelete }, ref) => (
+const Comment =({ comment, onDelete }) => (
   <AntdComment
     {...comment}
-    ref={ref}
     actions={[
       <Button
         type="link"
@@ -15,6 +14,6 @@ const Comment = React.forwardRef(({ comment, onDelete }, ref) => (
       </Button>
     ]}
   />
-));
+);
 
 export default Comment;

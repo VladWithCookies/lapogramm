@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns'
-import { Row, Col, Card, Avatar, Icon } from 'antd'
+import { Row, Col, Card, Avatar } from 'antd'
+import { MessageOutlined, HeartOutlined } from '@ant-design/icons';
 
 import { API_URL } from 'constants/api'
 import CommentList from 'components/shared/CommentList'
@@ -15,13 +16,12 @@ const PostDetails = ({
 }) => (
   <Row>
     <Col
-      className='bordered mb-20'
       sm={24}
       md={{ span: 10, offset: 7 }}
     >
       <Card
         hoverable={false}
-        className="post"
+        className="post bordered"
       >
         <Card.Meta
           title='Vlad V'
@@ -40,12 +40,12 @@ const PostDetails = ({
           <Statistic
             value={42}
             className='stats-item'
-            prefix={<Icon type='heart' />}
+            prefix={<HeartOutlined />}
           />
           <Statistic
             value={42}
             className='stats-item'
-            prefix={<Icon type='message' />}
+            prefix={<MessageOutlined />}
           />
         </div>
       </Card>

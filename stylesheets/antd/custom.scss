@@ -1,7 +1,13 @@
 .ant-comment-inner {
-  padding: 12px 20px;
+  padding: 12px;
 }
 .ant-comment-actions {
   margin-top: 8px;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .ant-comment-inner {
+    padding: 12px 20px;
+  }
 }

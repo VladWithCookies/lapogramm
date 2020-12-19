@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
+    "@ant-design/icons": "^4.3.0",
     "antd": "^4.9.4",
     "clsx": "^1.0.4",
     "date-fns": "^2.8.1",
@@ -20,10 +20,10 @@
     "mobx-react": "^6.2.5",
     "next": "9.3.2",
     "next-mobx-wrapper": "^0.4.0",
-    "node-sass": "^4.13.1",
     "rc-tween-one": "^2.7.3",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "sass": "^1.30.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",

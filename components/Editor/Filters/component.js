@@ -5,10 +5,10 @@ import SliderField from 'components/fields/SliderField'
 
 const Filters = () => (
   <Tabs
+    centered
     size='large'
     animated={false}
     tabPosition='bottom'
-    className='editor__tools'
   >
     <Tabs.TabPane key='brightness' tab='Brightness'>
       <Field
