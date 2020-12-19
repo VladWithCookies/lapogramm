@@ -1,10 +1,10 @@
-import Layout from '../components/Layout'
-import Editor from '../components/Editor'
+import MainLayout from 'components/layouts/MainLayout'
+import Editor from 'components/Editor'
 
 const EditorPage = () => (
-  <Layout title='Editor'>
+  <MainLayout title='Editor'>
     <Editor />
-  </Layout>
+  </MainLayout>
 )
 
 export default EditorPage

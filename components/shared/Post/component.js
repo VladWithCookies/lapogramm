@@ -1,8 +1,7 @@
-import React from 'react'
 import { formatDistanceToNow } from 'date-fns'
 import { Card, Avatar, Icon, Statistic } from 'antd'
 
-import { API_URL } from '../../constants'
+import { API_URL } from 'constants/api'
 
 const Post = ({
   filename,

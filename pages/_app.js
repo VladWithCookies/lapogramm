@@ -4,8 +4,8 @@ import { withMobx } from 'next-mobx-wrapper'
 import { Provider, useStaticRendering } from 'mobx-react'
 import 'antd/dist/antd.css'
 
-import * as stores from '../stores';
-import '../stylesheets/applications.scss'
+import * as stores from 'stores';
+import 'stylesheets/applications.scss'
 
 const isServer = !process.browser;
 

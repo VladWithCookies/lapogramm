@@ -1,12 +1,10 @@
-import React from 'react'
-
-import Layout from '../../components/Layout'
-import PostDetails from '../../components/PostDetails'
+import MainLayout from 'components/layouts/MainLayout'
+import PostDetails from 'components/PostDetails'
 
 const PostPage = ({ post }) => (
-  <Layout title='Post'>
+  <MainLayout title='Post'>
     <PostDetails post={post} />
-  </Layout>
+  </MainLayout>
 )
 
 PostPage.getInitialProps = async (context) => {

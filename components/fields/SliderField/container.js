@@ -1,5 +1,3 @@
-import React from 'react'
-
 import SliderFieldComponent from './component'
 
 const SliderField = ({

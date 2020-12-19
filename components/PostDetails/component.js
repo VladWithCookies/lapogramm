@@ -1,11 +1,10 @@
-import React from 'react'
 import { formatDistanceToNow } from 'date-fns'
 import { Row, Col, Card, Avatar, Icon } from 'antd'
 
-import { API_URL } from '../../constants'
-import CommentList from '../CommentList'
-import CommentForm from '../CommentForm'
-import Statistic from '../Statistic';
+import { API_URL } from 'constants/api'
+import CommentList from 'components/shared/CommentList'
+import CommentForm from 'components/shared/CommentForm'
+import Statistic from 'components/shared/Statistic';
 
 const PostDetails = ({
   post: {
@@ -16,7 +15,7 @@ const PostDetails = ({
 }) => (
   <Row>
     <Col
-      className='bordered'
+      className='bordered mb-20'
       sm={24}
       md={{ span: 10, offset: 7 }}
     >

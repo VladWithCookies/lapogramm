@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import TweenOne from '../../lib/tweenOne';
+import TweenOne from 'lib/tweenOne';
 
 const Statistic = ({
   value,

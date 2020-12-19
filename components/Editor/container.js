@@ -1,7 +1,7 @@
 import Router from 'next/router'
 import { withFormik } from 'formik'
 
-import { createPost } from '../../api'
+import { createPost } from 'api'
 import Editor from './component'
 
 const handleSubmit = async (values, { setSubmitting }) => {

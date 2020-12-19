@@ -1,9 +1,8 @@
-import React from 'react'
 import Link from 'next/link'
 import { map } from 'lodash'
 import { Row, Col } from 'antd'
 
-import Post from '../Post'
+import Post from 'components/shared/Post'
 
 const PostList = ({ posts }) => (
   <Row>

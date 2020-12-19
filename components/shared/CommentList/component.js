@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react';
 
-import TweenOne from '../../lib/tweenOne';
-import Comment from '../Comment';
+import TweenOne from 'lib/tweenOne';
+import Comment from 'components/shared/Comment';
 
 const CommentList = observer(({ comments, onDeleteComment }) => {
   const enter = [

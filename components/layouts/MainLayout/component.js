@@ -1,8 +1,7 @@
-import React from 'react'
 import Head from 'next/head'
 import { PageHeader } from 'antd'
 
-const Layout = ({ title, children }) => (
+const MainLayout = ({ title, children }) => (
   <>
     <Head>
       <title>{title}</title>
@@ -15,4 +14,4 @@ const Layout = ({ title, children }) => (
   </>
 )
 
-export default Layout
+export default MainLayout

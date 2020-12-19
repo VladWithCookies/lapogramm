@@ -1,5 +1,3 @@
-import React from 'react'
-
 const UploadField = ({ name, onChange, className }) => (
   <div className={className}>
     <input

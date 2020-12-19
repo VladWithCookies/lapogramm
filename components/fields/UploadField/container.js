@@ -1,5 +1,3 @@
-import React from 'react'
-
 import UploadFieldComponent from './component'
 
 const UploadField = ({ field, form, className }) => {

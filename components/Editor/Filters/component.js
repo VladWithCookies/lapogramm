@@ -1,8 +1,7 @@
-import React from 'react'
 import { Tabs } from 'antd'
 import { Field } from 'formik'
 
-import SliderField from '../../Fields/SliderField'
+import SliderField from 'components/fields/SliderField'
 
 const Filters = () => (
   <Tabs

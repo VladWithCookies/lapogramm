@@ -1,10 +1,9 @@
-import React from 'react'
 import { Field } from 'formik'
 import { Row, Col, Button, Icon } from 'antd'
 
+import UploadField from 'components/fields/UploadField'
 import Preview from './Preview'
 import Filters from './Filters'
-import UploadField from '../Fields/UploadField'
 
 const Editor = ({ handleSubmit, values, resetForm }) => (
   <Row>
@@ -14,7 +13,7 @@ const Editor = ({ handleSubmit, values, resetForm }) => (
     >
       <form
         onSubmit={handleSubmit}
-        className='bordered editor'
+        className='bordered editor mb-20'
       >
         {values.image ? (
           <>

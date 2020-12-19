@@ -14,13 +14,13 @@ $sides: (top, bottom, left, right);
 }
 
 .bordered {
-  border: 1px solid #e8e8e8;
+  border: 1px solid $border;
 }
 
 @media screen and (max-width: 768px) {
   .bordered {
     border: 0;
-    border-top: 1px solid #e8e8e8;
-    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
   }
 }

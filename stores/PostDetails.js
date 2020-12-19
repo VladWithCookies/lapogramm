@@ -1,9 +1,10 @@
 import { uniqueId } from 'lodash';
 import { observable, action } from 'mobx'
 import { BaseStore, getOrCreateStore } from 'next-mobx-wrapper';
+import 'mobx-react-lite/batchingForReactDom'
 
-import dataFormatter from '../lib/dataFormatter'
-import { getPost } from '../api/post'
+import dataFormatter from 'lib/dataFormatter'
+import { getPost } from 'api/post'
 
 class PostDetails extends BaseStore {
   @observable comments = []

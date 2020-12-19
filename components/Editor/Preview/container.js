@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import toCSSFilter from '../../../utils/toCSSFilter'
+import toCSSFilter from 'utils/toCSSFilter'
 import ImagePreviewComponent from './component'
 
 const ImagePreview = ({
