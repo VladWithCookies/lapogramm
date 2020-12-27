@@ -10,10 +10,10 @@
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
     "antd": "^4.9.4",
+    "axios": "^0.21.1",
     "clsx": "^1.0.4",
     "date-fns": "^2.8.1",
     "formik": "^2.0.6",
-    "isomorphic-unfetch": "^3.0.0",
     "jsona": "^1.5.1",
     "lodash": "^4.17.20",
     "mobx": "^5.15.6",

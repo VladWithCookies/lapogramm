@@ -1,5 +1,3 @@
-import { getPosts } from 'api'
-import dataFormatter from 'lib/dataFormatter'
 import MainLayout from 'components/layouts/MainLayout'
 import PostList from 'components/PostList'
 
@@ -9,12 +7,12 @@ const HomePage = ({ posts }) => (
   </MainLayout>
 )
 
-HomePage.getInitialProps = async () => {
-  const response = await getPosts()
-  const data = await response.json()
-  const posts = dataFormatter.deserialize(data)
+HomePage.getInitialProps = async (context) => {
+  const { store: { postListStore } } = context
 
-  return { posts }
+  await postListStore.getPosts()
+
+  return { posts: postListStore }
 }
 
 export default HomePage

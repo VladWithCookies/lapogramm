@@ -1,6 +1,6 @@
-import { uniqueId } from 'lodash';
+import { uniqueId } from 'lodash'
 import { observable, action } from 'mobx'
-import { BaseStore, getOrCreateStore } from 'next-mobx-wrapper';
+import { BaseStore, getOrCreateStore } from 'next-mobx-wrapper'
 import 'mobx-react-lite/batchingForReactDom'
 
 import dataFormatter from 'lib/dataFormatter'
@@ -10,11 +10,10 @@ class PostDetails extends BaseStore {
   @observable comments = []
 
   getPost = async (id) => {
-    const response = await getPost(id)
-    const json = await response.json()
-    const data = dataFormatter.deserialize(json)
+    const { data } = await getPost(id)
+    const post = dataFormatter.deserialize(data)
 
-    this.setPost(data)
+    this.setPost(post)
   }
 
   @action setPost = ({ id, filename, createdAt }) => {
@@ -24,7 +23,7 @@ class PostDetails extends BaseStore {
   }
 
   @action addComment = () => {
-    const id = uniqueId();
+    const id = uniqueId()
 
     this.comments.push({
       id: id,
@@ -36,8 +35,8 @@ class PostDetails extends BaseStore {
   }
 
   @action removeComment = (comment) => {
-    this.comments.remove(comment);
+    this.comments.remove(comment)
   }
 }
 
-export const getPostDetailsStore = getOrCreateStore('postDetailsStore', PostDetails);
+export const getPostDetailsStore = getOrCreateStore('postDetailsStore', PostDetails)

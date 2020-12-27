@@ -4,20 +4,20 @@ import { Row, Col } from 'antd'
 
 import Post from 'components/shared/Post'
 
-const PostList = ({ posts }) => (
+const PostList = ({ posts: { items } }) => (
   <Row>
     <Col
       sm={24}
       md={{ span: 10, offset: 7 }}
     >
-      {map(posts, (post) => (
+      {map(items, item => (
         <Link
-          key={post.id}
+          key={item.id}
           href='/posts/[id]'
-          as={`/posts/${post.id}`}
+          as={`/posts/${item.id}`}
         >
           <a>
-            <Post {...post} />
+            <Post {...item} />
           </a>
         </Link>
       ))}

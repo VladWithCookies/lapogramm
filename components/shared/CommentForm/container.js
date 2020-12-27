@@ -1,10 +1,10 @@
-import { defer } from 'lodash';
-import { MobXProviderContext } from 'mobx-react';
+import { defer } from 'lodash'
+import { MobXProviderContext } from 'mobx-react'
 
 import CommentFormComponent from './component'
 
 const CommentForm = () => {
-  const { postDetailsStore: { addComment } } = React.useContext(MobXProviderContext);
+  const { postDetailsStore: { addComment } } = React.useContext(MobXProviderContext)
 
   const handleAddComment = () => {
     addComment();
@@ -14,4 +14,4 @@ const CommentForm = () => {
   return <CommentFormComponent onAddComment={handleAddComment} />
 }
 
-export default CommentForm;
+export default CommentForm

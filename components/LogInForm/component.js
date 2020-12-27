@@ -1,18 +1,22 @@
-import { Form, Button, Input,  } from 'antd'
+import { Form, Button, Input } from 'antd'
 
-const LogInForm = () => (
-  <Form>
+const LogInForm = ({ onSubmit, values }) => (
+  <Form onFinish={onSubmit}>
     <Form.Item name="username">
       <Input
         size="large"
+        name="username"
         placeholder="Username"
+        values={values.username}
       />
     </Form.Item>
     <Form.Item name="password">
       <Input
         size="large"
+        name="password"
         type="password"
         placeholder="Password"
+        values={values.password}
       />
     </Form.Item>
     <Form.Item>
@@ -20,6 +24,7 @@ const LogInForm = () => (
         block
         size='large'
         type='primary'
+        htmlType='submit'
       >
         Log In
       </Button>
