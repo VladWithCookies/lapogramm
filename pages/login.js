@@ -1,9 +1,9 @@
 import AuthLayout from 'components/layouts/AuthLayout'
-import LogInForm from 'components/LogInForm'
+import LogIn from 'components/LogIn'
 
 const LogInPage = () => (
   <AuthLayout title='Log In'>
-    <LogInForm />
+    <LogIn />
   </AuthLayout>
 )
 

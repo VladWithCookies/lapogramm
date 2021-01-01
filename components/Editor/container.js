@@ -1,24 +1,11 @@
-import Router from 'next/router'
-import { withFormik } from 'formik'
+import { MobXProviderContext } from 'mobx-react'
 
-import { createPost } from 'api'
-import Editor from './component'
+import EditorComponent from './component'
 
-const handleSubmit = async (values, { setSubmitting }) => {
-  const formData = new FormData()
+const Editor = () => {
+  const { editorStore: { createPost } } = React.useContext(MobXProviderContext)
 
-  formData.append('image', values.result)
-  createPost(formData)
-  Router.push('/')
-  setSubmitting(false)
+  return <EditorComponent createPost={createPost} />
 }
 
-const mapPropsToValues = () => ({
-  filters: {
-    brightness: 1,
-    contrast: 1,
-    saturate: 1,
-  }
-})
-
-export default withFormik({ handleSubmit, mapPropsToValues })(Editor)
+export default Editor

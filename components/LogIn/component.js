@@ -1,11 +1,12 @@
 import { Form, Button, Input } from 'antd'
 
-const LogInForm = ({ onSubmit, values }) => (
+const LogIn = ({ onSubmit, onChange, values }) => (
   <Form onFinish={onSubmit}>
     <Form.Item name="username">
       <Input
         size="large"
         name="username"
+        onChange={onChange}
         placeholder="Username"
         values={values.username}
       />
@@ -15,6 +16,7 @@ const LogInForm = ({ onSubmit, values }) => (
         size="large"
         name="password"
         type="password"
+        onChange={onChange}
         placeholder="Password"
         values={values.password}
       />
@@ -32,4 +34,4 @@ const LogInForm = ({ onSubmit, values }) => (
   </Form>
 )
 
-export default LogInForm
+export default LogIn

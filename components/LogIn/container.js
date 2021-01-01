@@ -3,10 +3,10 @@ import { MobXProviderContext } from 'mobx-react'
 
 import LoginFormComponent from './component'
 
-const LoginFrom = (props) => {
-  const { loginFormStore: { logIn } } = React.useContext(MobXProviderContext)
+const LogIn = (props) => {
+  const { logInStore: { logIn } } = React.useContext(MobXProviderContext)
 
-  const { handleSubmit, values } = useFormik({
+  const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       username: '',
       password: '',
@@ -18,9 +18,10 @@ const LoginFrom = (props) => {
     <LoginFormComponent
       {...props}
       values={values}
+      onChange={handleChange}
       onSubmit={handleSubmit}
     />
   )
 }
 
-export default LoginFrom
+export default LogIn

@@ -10,7 +10,7 @@ const HomePage = ({ posts }) => (
 HomePage.getInitialProps = async (context) => {
   const { store: { postListStore } } = context
 
-  await postListStore.getPosts()
+  await postListStore.getPosts(context)
 
   return { posts: postListStore }
 }

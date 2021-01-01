@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { PageHeader } from 'antd'
+import Link from 'next/link';
 
 const MainLayout = ({ title, children }) => (
   <>
@@ -8,9 +8,13 @@ const MainLayout = ({ title, children }) => (
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <h1 className='header'>
-      lapogramm
-    </h1>
+    <Link href="/">
+      <a>
+        <h1 className='header'>
+          lapogramm
+        </h1>
+      </a>
+    </Link>
     {children}
   </>
 )

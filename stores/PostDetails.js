@@ -4,13 +4,13 @@ import { BaseStore, getOrCreateStore } from 'next-mobx-wrapper'
 import 'mobx-react-lite/batchingForReactDom'
 
 import dataFormatter from 'lib/dataFormatter'
-import { getPost } from 'api/post'
+import httpClient from 'lib/httpClient'
 
 class PostDetails extends BaseStore {
   @observable comments = []
 
-  getPost = async (id) => {
-    const { data } = await getPost(id)
+  getPost = async (context, id) => {
+    const { data } = await httpClient(context).get(`/posts/${id}`)
     const post = dataFormatter.deserialize(data)
 
     this.setPost(post)
@@ -39,4 +39,4 @@ class PostDetails extends BaseStore {
   }
 }
 
-export const getPostDetailsStore = getOrCreateStore('postDetailsStore', PostDetails)
+export const getPostDetailsStore = getOrCreateStore('PostDetailsStore', PostDetails)

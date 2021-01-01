@@ -13,7 +13,7 @@ PostPage.getInitialProps = async (context) => {
     store: { postDetailsStore },
   } = context
 
-  await postDetailsStore.getPost(id)
+  await postDetailsStore.getPost(context, id)
 
   return { post: postDetailsStore }
 }
