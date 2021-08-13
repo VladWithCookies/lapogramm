@@ -20,7 +20,7 @@
     "lodash": "^4.17.20",
     "mobx": "^5.15.6",
     "mobx-react": "^6.2.5",
-    "next": "9.3.2",
+    "next": "11.1.0",
     "next-mobx-wrapper": "^0.4.0",
     "rc-tween-one": "^2.7.3",
     "react": "16.12.0",
